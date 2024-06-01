@@ -135,7 +135,7 @@
 
 ;; Dev
 ; go through meow--setup recommendations
- 
+
 (use-package projectile
   :bind-keymap
   ("C-c p" . projectile-command-map)    ; binding convention advises against C-c C-p
@@ -173,6 +173,13 @@
 ;; Util?
 
 (use-package vterm)
+
+
+(use-package openwith
+  :init
+  (setq openwith-associations '(("\\.pdf" "zathura" (file))))
+  :config
+  (openwith-mode t))
 
 
 (use-package ivy
@@ -322,10 +329,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-'(custom-safe-themes
+ '(auth-source-save-behavior nil)
+ '(custom-safe-themes
    '("d77d6ba33442dd3121b44e20af28f1fae8eeda413b2c3d3b9f1315fbda021992" "013728cb445c73763d13e39c0e3fd52c06eefe3fbd173a766bfd29c6d040f100" default))
  '(package-selected-packages
-   '(python-mode clojure-mode catppuccin-theme diff-hl vterm counsel magit-org-todos flycheck org-edna org-ql org-roam-ui org-roam org-super-agenda doom-themes avy swiper which-key company mu4e-alert ivy magit meow telephone-line)))
+   '(openwith vterm python-mode clojure-mode catppuccin-theme diff-hl counsel magit-org-todos flycheck org-edna org-ql org-roam-ui org-roam org-super-agenda doom-themes avy swiper which-key company mu4e-alert ivy magit meow telephone-line)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
