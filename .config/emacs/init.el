@@ -237,18 +237,12 @@
   :config
   (setq org-todo-keywords
         '((sequence "PRELIMINARY" "INVESTIGATE" "|" "ASSIGNED")
-          (sequence "TODO" "|" "DONE"))) ; all very work-in-progress ofc
-  (setq org-capture-templates            ; make sure to set the bookmarks
-        '(("a" "Look what the kitty .."
-           plain (file+function "/ft2/wekstm/log.org"
-                                (lambda () (bookmark-get-position "rv")))
-           "%?"
-           :empty-lines-before 1)
-          ("b" ".. barfed up this time!"
-           plain (file+function "/ft2/wekstm/log.org"
-                                (lambda () (bookmark-get-position "rp")))
-           "%?\n%U"
-           :empty-lines-before 1))))
+          (sequence "TODO" "|" "DONE")))
+  (setq org-capture-templates
+        '(("g" "And here we gay again!"  ; this has the advantage that the chord is cgi
+           plain (file+headline "/ft2/wekstm/recluse.org" "P")
+           "*** %?"
+           :empty-lines-after 1))))
 
 
 ;; Languages
